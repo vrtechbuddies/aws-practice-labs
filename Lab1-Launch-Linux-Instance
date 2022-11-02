@@ -1,5 +1,5 @@
-Topic		    : EC2  (Elastic Compute Cloud)
-Aim			    : To Launch ec2 Linux Instance, & host a webpage  
+Topic: EC2  (Elastic Compute Cloud)
+Aim  : To Launch ec2 Linux Instance, & host a webpage  
 Lab no 	    : 1 
 SSH Client  : EC2 Connect, Putty & MobaXterm
 Region		  : us-east-1 (North Virginia)
@@ -7,40 +7,40 @@ Region		  : us-east-1 (North Virginia)
 ---------------------------------------------------------------------------------------------------------------------
 <<<<<<<Steps to Launch EC2 Instance>>>>>>>>>
 
-1. NAME & Tags			  : Add the Name for Server and we can add more tags too. Tags (Key:Value)  Name:LinuxServer1
+1. NAME & Tags		: Add the Name for Server and we can add more tags too. Tags (Key:Value)  Name:LinuxServer1
 
 2. Select AMI-Amazon	: Operating System Image (AMI-Amazon Machine Image) Amazon Linux 2
 
-3. Instance Type		  : t2.micro (its free tier eligible with 1 GB RAM and 1 VCPU)
+3. Instance Type	: t2.micro (its free tier eligible with 1 GB RAM and 1 VCPU)
 
-4. Create key Pair		: firstlinux
+4. Create key Pair	: firstlinux
 -key pair is a SSH key in .pem format
 -you can download this key once only
 -one  key can be assigned to any number of servers wheather Linux or Windows
 
 5. Network Setting
----VPC					        : select default-vpc
----Availability Zone	  : use any Availability Zone (us-east-1a)
----Security Group		    : Name  : LinuxSrv1-SG
-							Rule no 1 :
-							Protocol 	: SSH
-							Type		  : TCP
-							Port no		: 22
-							Source		: Anywhere/My-IP/Custom-IP/SG-ID
-							            [0.0.0.0/0]   ANY IPV4  (This will get replaced with your Public IP)
-											    ::/0		ANY IPV6
-							Rule no 2.		
-							Protocol 	: HTTP
-							Type		  : TCP
-							Port No		: 80
-							Source		: Anywhere/My-IP/Custom-IP/SG-ID
-										    	0.0.0.0/0   ANY IPV4
-											    ::/0		ANY IPV6
+---VPC			: select default-vpc
+---Availability Zone	: use any Availability Zone (us-east-1a)
+---Security Group	: Name  : LinuxSrv1-SG
+Rule no 1 :
+Protocol 	: SSH
+Type		  : TCP
+Port no		: 22
+Source		: Anywhere/My-IP/Custom-IP/SG-ID
+	    [0.0.0.0/0]   ANY IPV4  (This will get replaced with your Public IP)
+				    ::/0		ANY IPV6
+Rule no 2.		
+Protocol 	: HTTP
+Type		  : TCP
+Port No		: 80
+Source		: Anywhere/My-IP/Custom-IP/SG-ID
+				0.0.0.0/0   ANY IPV4
+				    ::/0		ANY IPV6
 
 6. Storage Selection	: ebs volume as per OS requirement
-    --EBS Volume			: upto 30 GB its free
+    --EBS Volume	: upto 30 GB its free
 
-7. Summary				    : To review all settings we have done so far.
+7. Summary		: To review all settings we have done so far.
 
 8. Enter number of Instances we want & Launch the Instance
 
